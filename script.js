@@ -1,1 +1,115 @@
-console.log("connected");
+console.log("script.js connected");
+
+var inputs = document.getElementById("inputs");
+var ul = document.getElementById("list");
+var addNameBtn = document.getElementById("add");
+var clearListBtn = document.getElementById("clear");
+var pickBtn = document.getElementById("pick");
+var textBox = document.getElementById("names");
+var pickedDisplay = document.getElementById('pickedDisplay');
+var deleteThis = document.getElementsByClassName('deleteThis');
+var $ = function (selector) {
+    return document.querySelector(selector);
+};
+
+
+// ********* ADD LI ELEMENT TO UL *********
+names.addEventListener("keyup", function(event){
+
+        if (event.keyCode === 13) {
+            var li = document.createElement('li');
+            var names = document.getElementById("names").value;
+            if (textBox.value!==''){
+                li.innerHTML = '<span class="deleteThis">x</span>' + names;
+                ul.appendChild(li);
+                
+                var list = $('#list').getElementsByTagName('span');
+                for(var i = 0; i < list.length; i++){
+                    var listItem = list[i];
+                    listItem.onclick = deleteThisFunc;
+
+                }
+
+                console.log(ul.innerText);
+            } else {
+                console.log("nothing entered");
+            }
+
+            document.getElementById("names").value = '';
+
+            // -- CONSOLE TESTS --
+            console.log("enter pressed");
+        }
+
+        
+        
+});
+
+// ************ PICK RANDOM FROM LIST ************
+pickBtn.addEventListener("click", function(){
+    
+    
+    // find the length of li elements in ul
+    var liLength = ul.getElementsByTagName('li').length;
+    var randomNum = Math.floor(Math.random() * liLength);
+    var pickedLi = ul.getElementsByTagName('li')[randomNum].innerText;
+    
+    // -- DISPLAY PICKED NAME --
+    $('#pickedTitle').style.display = "none";
+    pickedDisplay.innerText = pickedLi;
+
+    // -- CONSOLE TESTS --
+    console.log("picked name", pickedLi);
+    console.log("pick button clicked");
+
+    // this.disabled = true;
+
+});
+
+
+// ********* CLEAR LIST *********
+clearListBtn.addEventListener("click", function(event){
+    ul.innerHTML='';
+
+    $('#pickedTitle').style.display = "block";
+    pickedDisplay.innerText = '';
+
+
+    // -- CONSOLE TESTS --
+    console.log("clear list button clicked");
+});
+
+
+
+
+// ************ FUNCTIONS ************
+
+// ---- DELETE THIS FUNCTION ----
+function deleteThisFunc() {
+    this.parentNode.removeChild(this);
+
+    var li = $('#list').getElementsByTagName('li');
+    for (var i = 0; i < li.length; i++) {
+        var listItem = li[i];
+        listItem.onclick = deleteThisFunc;
+
+    }
+}
+
+document.getElementById("add").onclick = function () {
+
+    var names = document.getElementById("names").value;
+
+    var li = document.createElement('li');
+    if (textBox.value !== '') {
+        li.innerHTML = names;
+        ul.appendChild(li);
+    } else {
+        console.log("nothing entered");
+
+    }
+
+    document.getElementById("names").value = '';
+
+    console.log("add name button clicked");
+};

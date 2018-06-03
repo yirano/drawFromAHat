@@ -1,3 +1,151 @@
 body {
-    color: red;
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: 'Open Sans',
+    sans-serif;
+
+}
+
+h1{
+    text-align: center;
+    font-size: 52px;
+    font-family: 'Lora', serif;
+    width: 100%;
+}
+
+
+#listDisplay {
+    position: absolute;
+    left: 80px;
+    top: 10%;
+    width: 245px;
+}
+
+ul {
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+li {
+    position: relative;
+    list-style-type: none;
+    padding: 15px 0 2px 0;
+    border-bottom: 1px dotted black;
+}
+
+#inputs {
+    position: relative;
+    margin: auto;
+    width: 38%;
+    padding: 10px;
+    top: 20%;
+    text-align: center;
+}
+
+#btns {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+}
+
+#display {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    margin-top: 60px;
+    background-color: rgba(204, 204, 204, 0.486);
+    border-radius: 15px;
+        font-size: 24px;
+        color: rgb(21, 116, 71);
+
+    
+}
+
+#pickedTitle {
+    display: inline-block;
+    font-size: 24px;
+    letter-spacing: .7px;
+    color: rgb(77, 77, 77);
+    font-weight: lighter;
+}
+
+input[type="button"] {
+
+    display: inline-block;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    width: 175px;
+    height: 35px;
+    margin: 5px 0;
+
+    font-size: 14px;
+    letter-spacing: .6px;
+}
+
+input[type="button"]:focus {
+    outline: none;
+}
+
+input[type="button"]:hover {
+    transition: 70ms;
+}
+
+#add:active {
+    border: 1px blue solid;
+    background-color: rgba(22, 0, 223, 0.3);
+}
+
+#clear:active {
+    border: 1px red solid;
+    background-color: rgba(223, 0, 0, 0.3);
+}
+
+#pick:active {
+    border: 1px green solid;
+    background-color: rgba(0, 223, 19, 0.3);
+}
+
+#names {
+    display: block;
+    height: 30px;
+    width: 100%;
+    padding-left: 20px;
+    margin: 10px;
+    border: 1px #ccc solid;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+
+#nameTitle {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-bottom: double 3px black;
+}
+
+.deleteThis {
+    display: inline-block;
+      cursor: pointer;
+      /* position: absolute;
+      left: 0%; */
+      width: 30px;
+      height: 100%;
+      text-align: center;
+      margin-right: 10px;
+
+    /* border: solid red 2px; */
+
+}
+
+.displayNone {
+    display: none;
 }
