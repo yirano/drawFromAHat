@@ -7,8 +7,10 @@ body {
     position: relative;
     font-family: 'Open Sans',
     sans-serif;
-
 }
+
+
+
 
 h1{
     text-align: center;
@@ -29,6 +31,9 @@ ul {
     padding: 0;
     position: relative;
     z-index: 1;
+    white-space: nowrap;
+    width: 200px;
+    
 }
 
 li {
@@ -36,6 +41,7 @@ li {
     list-style-type: none;
     padding: 15px 0 2px 0;
     border-bottom: 1px dotted black;
+
 }
 
 #inputs {
@@ -148,4 +154,8 @@ input[type="button"]:hover {
 
 .displayNone {
     display: none;
+}
+
+span {
+    display: inline-block;
 }
