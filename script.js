@@ -54,7 +54,6 @@ console.log("names", names);
 // ************ PICK RANDOM FROM LIST ************
 pickBtn.addEventListener("click", function(){
     
-    
     // find the length of li elements in ul
     var liLength = ul.getElementsByTagName('li').length;
     var randomNum = Math.floor(Math.random() * liLength);
@@ -70,6 +69,12 @@ pickBtn.addEventListener("click", function(){
     console.log("pick button clicked");
 
     // this.disabled = true;
+
+});
+
+pickedDisplay.addEventListener("click", function(){
+    pickedDisplay.innerHTML="<style:'color=red'>Name drawn will show here";
+    pickedDisplay.style.color = "rgb(77, 77, 77)";
 
 });
 
