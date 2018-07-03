@@ -8,6 +8,7 @@ var pickBtn = document.getElementById("pick");
 var textBox = document.getElementById("names");
 var pickedDisplay = document.getElementById('pickedDisplay');
 var deleteThis = document.getElementsByClassName('deleteThis');
+var li = document.createElement('li');
 var $ = function (selector) {
     return document.querySelector(selector);
 };
@@ -63,7 +64,7 @@ pickBtn.addEventListener("click", function(){
     $('#pickedTitle').style.display = "none";
     // pickedDisplay.innerText = pickedLi;
     pickedDisplay.innerText = pickedLi.substring(1);
-
+    pickedDisplay.style.color = "rgb(21, 116, 71)";
     // -- CONSOLE TESTS --
     console.log("picked name", pickedLi);
     console.log("pick button clicked");
@@ -73,7 +74,7 @@ pickBtn.addEventListener("click", function(){
 });
 
 pickedDisplay.addEventListener("click", function(){
-    pickedDisplay.innerHTML="<style:'color=red'>Name drawn will show here";
+    pickedDisplay.innerHTML="Name drawn will show here";
     pickedDisplay.style.color = "rgb(77, 77, 77)";
 
 });
@@ -94,17 +95,19 @@ clearListBtn.addEventListener("click", function(event){
 
 
 
+
 // ************ FUNCTIONS ************
 
 // ---- DELETE THIS FUNCTION ----
 function deleteThisFunc() {
     this.parentNode.removeChild(this);
-
+    
     var li = $('#list').getElementsByTagName('li');
     for (var i = 0; i < li.length; i++) {
         var listItem = li[i];
-        listItem.onclick = deleteThisFunc;
 
+        listItem.onclick = deleteThisFunc;
+        listItem.contenteditable=true;
     }
 }
 
@@ -112,7 +115,7 @@ document.getElementById("add").onclick = function () {
 
     var names = document.getElementById("names").value;
 
-    var li = document.createElement('li');
+
     if (textBox.value !== '') {
         li.innerHTML = names;
         ul.appendChild(li);
@@ -125,3 +128,5 @@ document.getElementById("add").onclick = function () {
 
     console.log("add name button clicked");
 };
+
+
