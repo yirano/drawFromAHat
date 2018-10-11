@@ -25,18 +25,18 @@ names.addEventListener("keyup", function(event){
                 span.className = 'deleteThis';
             var sDel = '<span class="deleteThis">x</span>';
             if (textBox.value!==''){
-                
+
                 li.innerHTML = sDel + names;
                 ul.appendChild(li);
 
-                
+
                 var list = $('#list').getElementsByTagName('span');
                 for(var i = 0; i < list.length; i++){
                     var listItem = list[i];
-                    listItem.onclick = deleteThisFunc;
-
+                    listItem.addEventListener('click', deleteThisFunc);
                 }
-console.log("names", names);
+
+                console.log("names", names);
                 console.log(ul.innerText);
             } else {
                 console.log("nothing entered");
@@ -48,18 +48,18 @@ console.log("names", names);
             console.log("enter pressed");
         }
 
-        
-        
+
+
 });
 
 // ************ PICK RANDOM FROM LIST ************
 pickBtn.addEventListener("click", function(){
-    
+
     // find the length of li elements in ul
     var liLength = ul.getElementsByTagName('li').length;
     var randomNum = Math.floor(Math.random() * liLength);
     var pickedLi = ul.getElementsByTagName('li')[randomNum].innerText;
-    
+
     // -- DISPLAY PICKED NAME --
     $('#pickedTitle').style.display = "none";
     // pickedDisplay.innerText = pickedLi;
@@ -100,15 +100,7 @@ clearListBtn.addEventListener("click", function(event){
 
 // ---- DELETE THIS FUNCTION ----
 function deleteThisFunc() {
-    this.parentNode.removeChild(this);
-    
-    var li = $('#list').getElementsByTagName('li');
-    for (var i = 0; i < li.length; i++) {
-        var listItem = li[i];
-
-        listItem.onclick = deleteThisFunc;
-        listItem.contenteditable=true;
-    }
+    this.parentNode.remove(this);
 }
 
 document.getElementById("add").onclick = function () {
@@ -128,5 +120,3 @@ document.getElementById("add").onclick = function () {
 
     console.log("add name button clicked");
 };
-
-
