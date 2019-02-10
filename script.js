@@ -20,6 +20,7 @@ names.addEventListener("keyup", function(event){
         if (event.keyCode === 13) {
             var names = document.getElementById("names").value;
             var li = document.createElement('li');
+                li.contentEditable = 'true';
             var span = document.createElement('span');
                 span.innerHTML = 'x';
                 span.className = 'deleteThis';
