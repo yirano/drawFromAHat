@@ -22,6 +22,7 @@ names.addEventListener("keyup", function(event){
             var li = document.createElement('li');
             var span = document.createElement('span');
                 span.innerHTML = 'x';
+                span.style.user-select = 'none';
                 span.className = 'deleteThis';
             var sDel = '<span class="deleteThis">x</span>';
             if (textBox.value!==''){
