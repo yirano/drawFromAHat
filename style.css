@@ -140,13 +140,15 @@ input[type="button"]:hover {
 
 .deleteThis {
     display: inline-block;
-      cursor: pointer;
-      /* position: absolute;
-      left: 0%; */
-      width: 30px;
-      height: 100%;
-      text-align: center;
-      margin-right: 10px;
+    cursor: pointer;
+    /* position: absolute;
+    left: 0%; */
+    width: 30px;
+    height: 100%;
+    text-align: center;
+    margin-right: 10px;
+    background: transparent;
+    border: none;
 
     /* border: solid red 2px; */
 
@@ -158,4 +160,8 @@ input[type="button"]:hover {
 
 span {
     display: inline-block;
+}
+
+.name:focus {
+    outline: none;
 }

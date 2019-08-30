@@ -20,22 +20,13 @@ names.addEventListener("keyup", function(event){
         if (event.keyCode === 13) {
             var names = document.getElementById("names").value;
             var li = document.createElement('li');
-                li.contentEditable = 'true';
-            var span = document.createElement('span');
-                span.innerHTML = 'x';
-                span.className = 'deleteThis';
-            var sDel = '<span class="deleteThis">x</span>';
+                // li.contentEditable = 'true';
+            var sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)">x</button>';
+            let name = `<input type="text" class="name" value="${names}"></input>`;
             if (textBox.value!==''){
 
-                li.innerHTML = sDel + names;
+                li.innerHTML = sDel + name;
                 ul.appendChild(li);
-
-
-                var list = $('#list').getElementsByTagName('span');
-                for(var i = 0; i < list.length; i++){
-                    var listItem = list[i];
-                    listItem.addEventListener('click', deleteThisFunc);
-                }
 
                 console.log("names", names);
                 console.log(ul.innerText);
@@ -58,19 +49,24 @@ pickBtn.addEventListener("click", function(){
 
     // find the length of li elements in ul
     var liLength = ul.getElementsByTagName('li').length;
-    var randomNum = Math.floor(Math.random() * liLength);
-    var pickedLi = ul.getElementsByTagName('li')[randomNum].innerText;
+    let pickedLi;
+    if (liLength == 0) {
+        pickedDisplay.innerHTML.value="Name drawn will show here";
+        pickedDisplay.style.color = "rgb(77, 77, 77)";
+    } else {
+        var randomNum = Math.floor(Math.random() * liLength);
+        pickedLi = ul.getElementsByTagName('li')[randomNum].children[1].value;
+        // -- DISPLAY PICKED NAME --
+        $('#pickedTitle').style.display = "none";
+        // pickedDisplay.innerText = pickedLi;
+        pickedDisplay.innerText = pickedLi;
+        pickedDisplay.style.color = "rgb(21, 116, 71)";
+        // -- CONSOLE TESTS --
+        console.log("picked name", pickedLi);
+        console.log("pick button clicked");
 
-    // -- DISPLAY PICKED NAME --
-    $('#pickedTitle').style.display = "none";
-    // pickedDisplay.innerText = pickedLi;
-    pickedDisplay.innerText = pickedLi.substring(1);
-    pickedDisplay.style.color = "rgb(21, 116, 71)";
-    // -- CONSOLE TESTS --
-    console.log("picked name", pickedLi);
-    console.log("pick button clicked");
-
-    // this.disabled = true;
+        // this.disabled = true;
+    }
 
 });
 
@@ -100,8 +96,8 @@ clearListBtn.addEventListener("click", function(event){
 // ************ FUNCTIONS ************
 
 // ---- DELETE THIS FUNCTION ----
-function deleteThisFunc() {
-    this.parentNode.remove(this);
+function deleteThisFunc(e) {
+    e.parentNode.remove();
 }
 
 document.getElementById("add").onclick = function () {
