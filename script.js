@@ -61,7 +61,7 @@ pickBtn.addEventListener('click', function() {
   // -- CONSOLE TESTS --
   console.log('picked name', pickedLi);
   console.log('pick button clicked');
-
+  confetti.start(1100, 50, 350);
   // this.disabled = true;
 });
 
