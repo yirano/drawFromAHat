@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Draw from a Hat</title>
-        <!-- <meta name="description" content=""> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-    </head>
-    <body>
-        
-        <div id = "inputs">
-            <h1>DRAW FROM A HAT</h1>
-            <input type="text" id="names" />
-            <div id = "btns">
-                <input type="button" value="Add to List" id="add" />
-                <input type="button" value="Clear List" id="clear" />
-                <input type="button" value="Pick Randomly!" id="pick" />
-            </div>
-            <div id="display">
-                <div class="title" id="pickedTitle">Name drawn will show here</div>
-                <div id="pickedDisplay"></div>
-            </div>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Draw from a Hat</title>
+    <!-- <meta name="description" content=""> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="inputs">
+      <h1>DRAW FROM A HAT</h1>
+      <img id="hat" src="./top-hat.png" alt="hat" />
+      <input type="text" id="names" />
+      <div id="btns">
+        <input type="button" value="Add to List" id="add" />
+        <input type="button" value="Clear List" id="clear" />
+        <input type="button" value="Pick Randomly!" id="pick" />
+      </div>
+      <div id="display">
+        <div class="title" id="pickedTitle">Name drawn will show here</div>
+        <div id="pickedDisplay"></div>
+      </div>
+    </div>
 
-        <div id = "listDisplay">
-            <div class="title" id="nameTitle">NAMES</div>
-            <ul id = "list"></ul>
-        </div>
+    <div id="listDisplay">
+      <div class="title" id="nameTitle">NAMES</div>
+      <ul id="list"></ul>
+    </div>
 
-        
-
-           
-        <script src="script.js" async defer></script>
-    </body>
+    <script src="script.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+  </body>
 </html>
