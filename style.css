@@ -36,7 +36,7 @@ li {
   position: relative;
   list-style-type: none;
   padding: 15px 0 2px 0;
-  border-bottom: 1px dotted black;
+  border-bottom: none;
 }
 
 #inputs {
