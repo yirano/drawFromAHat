@@ -17,8 +17,8 @@ function addToList() {
   var names = document.getElementById('names').value;
   var li = document.createElement('li');
   // li.contentEditable = 'true';
-  var sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)">x</button>';
-  let name = `<input type="text" class="name" value="${names}"></input>`;
+  var sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)" title="Delete name">X</button>';
+  let name = `<p class="name">${names}</p>`;
   if (textBox.value !== '') {
     li.innerHTML = sDel + name;
     ul.appendChild(li);
@@ -55,7 +55,7 @@ pickBtn.addEventListener('click', function () {
     pickedDisplay.style.color = 'rgb(77, 77, 77)';
   } else {
     var randomNum = Math.floor(Math.random() * liLength);
-    pickedLi = ul.getElementsByTagName('li')[randomNum].children[1].value;
+    pickedLi = ul.getElementsByTagName('li')[randomNum].children[1].textContent;
     // -- DISPLAY PICKED NAME --
     document.getElementById("pickedTitle").style.display = 'none';
     // pickedDisplay.innerText = pickedLi;

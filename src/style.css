@@ -145,6 +145,7 @@ input[type='button']:hover {
   margin-right: 10px;
   background: transparent;
   border: none;
+  color: yellow;
 
   /* border: solid red 2px; */
 }
@@ -155,6 +156,10 @@ input[type='button']:hover {
 
 span {
   display: inline-block;
+}
+
+.name{
+  display: inline;
 }
 
 .name:focus {
