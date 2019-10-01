@@ -9,12 +9,12 @@ var textBox = document.getElementById('names');
 var pickedDisplay = document.getElementById('pickedDisplay');
 var deleteThis = document.getElementsByClassName('deleteThis');
 var li = document.createElement('li');
-var $ = function(selector) {
+var $ = function (selector) {
   return document.querySelector(selector);
 };
 
 // ********* ADD LI ELEMENT TO UL *********
-names.addEventListener('keyup', function(event) {
+names.addEventListener('keyup', function (event) {
   if (event.keyCode === 13) {
     var names = document.getElementById('names').value;
     var li = document.createElement('li');
@@ -40,7 +40,7 @@ names.addEventListener('keyup', function(event) {
 });
 
 // ************ PICK RANDOM FROM LIST ************
-pickBtn.addEventListener('click', function() {
+pickBtn.addEventListener('click', function () {
   // find the length of li elements in ul
   var liLength = ul.getElementsByTagName('li').length;
   let pickedLi;
@@ -63,13 +63,13 @@ pickBtn.addEventListener('click', function() {
   }
 });
 
-pickedDisplay.addEventListener('click', function() {
+pickedDisplay.addEventListener('click', function () {
   pickedDisplay.innerHTML = 'Name drawn will show here';
   pickedDisplay.style.color = 'rgb(77, 77, 77)';
 });
 
 // ********* CLEAR LIST *********
-clearListBtn.addEventListener('click', function(event) {
+clearListBtn.addEventListener('click', function (event) {
   ul.innerHTML = '';
 
   $('#pickedTitle').style.display = 'block';
@@ -86,7 +86,7 @@ function deleteThisFunc(e) {
   e.parentNode.remove();
 }
 
-document.getElementById('add').onclick = function() {
+document.getElementById('add').onclick = function () {
   var names = document.getElementById('names').value;
 
   if (textBox.value !== '') {

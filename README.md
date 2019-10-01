@@ -1,9 +1,17 @@
 # Draw from a hat
 
-One day I found myself needing a program to randomly pick a name from a list. I decided I'd rather make my own than use one available on the Internet.
+This project started as something to implement some basic knowledge I was picking up on Javascript. It was plain and a little vanilla that needed some personal touches so I uploaded it on Github hoping that the vast community could pitch in with some of their ideas. 
 
-### Things that needs to be worked on
-* I want the name to be deleted off the list when clicked on the 'x' and the 'x' only.
-* allow user to edit names "in the hat" by clicking on it from the list.
-    - editable li
-* the layout lacks character -- figure something out to make it stand out more
+## Instructions on Contributing
+
+  1. Clone this repo using https://github.com/yirano/drawFromAHat.git
+  2. Create a new branch with your name/
+  3. Hack away and make a pull request. <br />
+   
+      **[!Important]** Title your pull request describing the changes and/or features you have added. 
+  4. Add your name below under "Contributors" with a link to your Github profile using correct Markdown format.
+
+
+  ## Contributors
+
+  [Tiffany Arellano](https://github.com/yirano)
