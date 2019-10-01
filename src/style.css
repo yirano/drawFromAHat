@@ -14,6 +14,7 @@ h1 {
   font-size: 52px;
   font-family: 'Lora', serif;
   width: 100%;
+  color: #FFFFF2;
 }
 
 #listDisplay {
@@ -78,6 +79,7 @@ li {
   letter-spacing: 0.7px;
   color: rgb(77, 77, 77);
   font-weight: lighter;
+  color: #FFFFF2;
 }
 
 input[type='button'] {
@@ -100,21 +102,6 @@ input[type='button']:hover {
   transition: 70ms;
 }
 
-#add:active {
-  border: 1px blue solid;
-  background-color: rgba(22, 0, 223, 0.3);
-}
-
-#clear:active {
-  border: 1px red solid;
-  background-color: rgba(223, 0, 0, 0.3);
-}
-
-#pick:active {
-  border: 1px green solid;
-  background-color: rgba(0, 223, 19, 0.3);
-}
-
 #names {
   display: block;
   height: 30px;
@@ -132,6 +119,7 @@ input[type='button']:hover {
   letter-spacing: 1px;
   margin-bottom: 20px;
   border-bottom: double 3px black;
+  color: #FFFFF2;
 }
 
 .deleteThis {
@@ -160,6 +148,7 @@ span {
 
 .name{
   display: inline;
+  color: #FFFFF2;
 }
 
 .name:focus {
