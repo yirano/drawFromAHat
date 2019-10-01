@@ -6,7 +6,7 @@ Check out the [live page](https://yirano.github.io/drawFromAHat/) and see what c
 
 ## Instructions on Contributing
 
-  1. Clone this repo using https://github.com/yirano/drawFromAHat.git <br />
+  1. Clone this repo using https://github.com/yirano/drawFromAHat.git/src/ <br />
 
       _Forking is optional!_
   2. Hack away and make a pull request. <br />
