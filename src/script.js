@@ -15,19 +15,32 @@ var $ = function (selector) {
 // ********* ADD LI ELEMENT TO UL *********
 function addToList() {
   var names = document.getElementById('names').value;
-  var li = document.createElement('li');
-  // li.contentEditable = 'true';
-  var sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)" title="Delete name">X</button>';
-  let name = `<p class="name">${names}</p>`;
-  if (textBox.value !== '') {
-    li.innerHTML = sDel + name;
-    ul.appendChild(li);
 
-    console.log('names', names);
-    console.log(ul.innerText);
-  } else {
-    console.log('nothing entered');
-  }
+  //Separates all names between commas
+  var namesList = names.split(',');
+
+
+  namesList.forEach(function(entry){
+
+    //Checks if entry between commas is empty
+    if(entry.replace(/\s/g, '') == ''){
+      return;
+    }
+
+    var li = document.createElement('li');
+    // li.contentEditable = 'true';
+    var sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)" title="Delete name">X</button>';
+    let name = `<p class="name">${entry}</p>`;
+    if (textBox.value !== '') {
+      li.innerHTML = sDel + name;
+      ul.appendChild(li);
+
+      console.log('names', entry);
+      console.log(ul.innerText);
+    } else {
+      console.log('nothing entered');
+    }
+  });
 
   document.getElementById('names').value = '';
 
@@ -51,7 +64,7 @@ pickBtn.addEventListener('click', function () {
   var liLength = ul.getElementsByTagName('li').length;
   let pickedLi;
   if (liLength == 0) {
-    pickedDisplay.innerHTML.value = 'Name drawn will show here';
+    pickedDisplay.innerHTML.value = 'Name drawn will show here\nEnter names each at a time or separated by commas';
     pickedDisplay.style.color = 'rgb(77, 77, 77)';
   } else {
     var randomNum = Math.floor(Math.random() * liLength);
@@ -70,7 +83,7 @@ pickBtn.addEventListener('click', function () {
 });
 
 pickedDisplay.addEventListener('click', function () {
-  pickedDisplay.innerHTML = 'Name drawn will show here';
+  pickedDisplay.innerHTML = 'Name drawn will show here\nEnter names each at a time or separated by commas';
   pickedDisplay.style.color = 'rgb(77, 77, 77)';
 });
 
