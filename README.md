@@ -10,8 +10,11 @@ Check out the [live page](https://yirano.github.io/drawFromAHat/src/) and see wh
 
       _Forking is optional!_
   2. Hack away and make a pull request. <br />
+     
+     - Check out the [Issues](https://github.com/yirano/drawFromAHat/issues) if you need some ideas.
    
       **[!Important]** Title your pull request describing the changes and/or features you have added. 
+
   3. Add your name below under "Contributors" with a link to your Github profile using correct Markdown format.
 
 
