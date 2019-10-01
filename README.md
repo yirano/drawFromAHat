@@ -4,6 +4,7 @@ This project started as something to implement some basic knowledge I was pickin
 
 Check out the [live page](https://yirano.github.io/drawFromAHat/src/) and see what changes you could contribute!
 
+
 ## Instructions on Contributing
 
   1. Clone this repo using https://github.com/yirano/drawFromAHat.git/ <br />
@@ -17,7 +18,10 @@ Check out the [live page](https://yirano.github.io/drawFromAHat/src/) and see wh
 
   3. Add your name below under "Contributors" with a link to your Github profile using correct Markdown format.
 
-
-  ## Contributors
+## Contributors
 
   [Tiffany Arellano](https://github.com/yirano)
+
+<br />
+## License
+[MIT License](https://opensource.org/licenses/mit-license.php)
