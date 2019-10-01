@@ -165,3 +165,16 @@ span {
 .name:focus {
   outline: none;
 }
+
+#winners{
+  margin-top: 45px;
+  position: absolute;
+  right: 80px;
+  top: 10%;
+  width: 245px;
+}
+
+#rank{
+  color: yellow;
+  padding-right: 10px;
+}

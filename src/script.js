@@ -12,6 +12,9 @@ var $ = function (selector) {
   return document.querySelector(selector);
 };
 
+var winUl = document.getElementById('winlist');
+var winnersList = [];
+
 // ********* ADD LI ELEMENT TO UL *********
 function addToList() {
   var names = document.getElementById('names').value;
@@ -79,6 +82,17 @@ pickBtn.addEventListener('click', function () {
     console.log('pick button clicked');
     confetti.start(1100, 50, 450);
     // this.disabled = true;
+
+    //Move name from normal list to winner's list
+    winnersList.push(pickedLi);
+    ul.getElementsByTagName('li')[randomNum].remove();
+
+    var li = document.createElement('li');
+    let name = `<p class="name"><span id="rank">${winnersList.length})</span>${pickedLi}</p>`;
+
+    li.innerHTML = name;
+    winUl.appendChild(li);
+
   }
 });
 
@@ -90,6 +104,8 @@ pickedDisplay.addEventListener('click', function () {
 // ********* CLEAR LIST *********
 clearListBtn.addEventListener('click', function (event) {
   ul.innerHTML = '';
+  winUl.innerHTML = '';
+  winnersList = [];
 
   $('#pickedTitle').style.display = 'block';
   pickedDisplay.innerText = '';
