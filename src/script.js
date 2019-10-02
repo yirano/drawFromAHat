@@ -70,11 +70,11 @@ pickBtn.addEventListener('click', function () {
     pickedDisplay.innerHTML.value = 'Name drawn will show here\nEnter names each at a time or separated by commas';
     pickedDisplay.style.color = 'rgb(77, 77, 77)';
   } else {
+	  //Random number is picked, variable pickedLi is set to the corresponding item of the names list 
     var randomNum = Math.floor(Math.random() * liLength);
     pickedLi = ul.getElementsByTagName('li')[randomNum].children[1].textContent;
     // -- DISPLAY PICKED NAME --
     document.getElementById("pickedTitle").style.display = 'none';
-    // pickedDisplay.innerText = pickedLi;
     pickedDisplay.innerText = pickedLi;
     pickedDisplay.style.color = 'rgb(21, 116, 71)';
     // -- CONSOLE TESTS --

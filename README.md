@@ -22,6 +22,7 @@ Check out the [live page](https://yirano.github.io/drawFromAHat/src/) and see wh
 
   * [Tiffany Arellano](https://github.com/yirano)
   * [Mohamed Yasser](https://github.com/MohamedYasser97)
+  * [Kevin Dorner](https://github.com/mrhspecter)
 
 ## License
 [MIT License](https://opensource.org/licenses/mit-license.php)
