@@ -5,14 +5,13 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  font-family: 'Open Sans', sans-serif;
-  background-color: gray;
+  font-family: 'Roboto', sans-serif;
+  background-image:linear-gradient(to right bottom, rgb(9, 155, 67), rgb(14, 82, 150));
 }
 
 h1 {
   text-align: center;
   font-size: 52px;
-  font-family: 'Lora', serif;
   width: 100%;
   color: #FFFFF2;
 }
@@ -50,7 +49,7 @@ li {
 }
 #hat {
   width: 235px;
-  height: 255px;
+  height: 240px;
   margin-bottom: 25px;
 }
 
@@ -85,11 +84,11 @@ li {
 input[type='button'] {
   display: inline-block;
   border: solid 1px #ccc;
-  border-radius: 5px;
+  border-radius: 35px;
   width: 175px;
   height: 35px;
   margin: 5px 0;
-
+  border: none;
   font-size: 14px;
   letter-spacing: 0.6px;
 }
@@ -99,7 +98,12 @@ input[type='button']:focus {
 }
 
 input[type='button']:hover {
-  transition: 70ms;
+  transform: translateY(-2px);
+}
+
+input[type='button']:active {
+  transform: translateY(1px);
+  outline: none;
 }
 
 #names {
@@ -109,8 +113,9 @@ input[type='button']:hover {
   padding-left: 20px;
   margin: 10px;
   border: 1px #ccc solid;
-  border-radius: 7px;
+  border-radius: 40px;
   font-size: 14px;
+  outline: none;
 }
 
 #nameTitle {
@@ -166,4 +171,8 @@ span {
 #rank{
   color: yellow;
   padding-right: 10px;
+}
+
+.display-3{
+  font-family: 'Source Sans Pro', sans-serif;
 }
