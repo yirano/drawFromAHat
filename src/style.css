@@ -6,7 +6,7 @@ body {
   padding: 0;
   position: relative;
   font-family: 'Open Sans', sans-serif;
-  background-color: gray;
+  background-color: #252629;
 }
 
 h1 {
@@ -67,7 +67,7 @@ li {
   padding: 10px;
   padding-left: 20px;
   margin-top: 60px;
-  background-color: rgba(204, 204, 204, 0.486);
+  background-color:#7b7b7f;
   border-radius: 15px;
   font-size: 24px;
   color: rgb(21, 116, 71);
@@ -77,14 +77,13 @@ li {
   display: inline-block;
   font-size: 24px;
   letter-spacing: 0.7px;
-  color: rgb(77, 77, 77);
+  color: #ffffff;
   font-weight: lighter;
   color: #FFFFF2;
 }
 
 input[type='button'] {
   display: inline-block;
-  border: solid 1px #ccc;
   border-radius: 5px;
   width: 175px;
   height: 35px;
@@ -133,7 +132,7 @@ input[type='button']:hover {
   margin-right: 10px;
   background: transparent;
   border: none;
-  color: yellow;
+  color: #da0000;
 
   /* border: solid red 2px; */
 }

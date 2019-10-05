@@ -68,7 +68,7 @@ pickBtn.addEventListener('click', function () {
   let pickedLi;
   if (liLength == 0) {
     pickedDisplay.innerHTML.value = 'Name drawn will show here\nEnter names each at a time or separated by commas';
-    pickedDisplay.style.color = 'rgb(77, 77, 77)';
+    pickedDisplay.style.color = '#ffffff';
   } else {
     var randomNum = Math.floor(Math.random() * liLength);
     pickedLi = ul.getElementsByTagName('li')[randomNum].children[1].textContent;
@@ -76,7 +76,7 @@ pickBtn.addEventListener('click', function () {
     document.getElementById("pickedTitle").style.display = 'none';
     // pickedDisplay.innerText = pickedLi;
     pickedDisplay.innerText = pickedLi;
-    pickedDisplay.style.color = 'rgb(21, 116, 71)';
+    pickedDisplay.style.color = '#00ea00';
     // -- CONSOLE TESTS --
     console.log('picked name', pickedLi);
     console.log('pick button clicked');
@@ -98,7 +98,7 @@ pickBtn.addEventListener('click', function () {
 
 pickedDisplay.addEventListener('click', function () {
   pickedDisplay.innerHTML = 'Name drawn will show here\nEnter names each at a time or separated by commas';
-  pickedDisplay.style.color = 'rgb(77, 77, 77)';
+  pickedDisplay.style.color = '#ffffff';
 });
 
 // ********* CLEAR LIST *********
