@@ -24,6 +24,8 @@ function addToList() {
 
 
   namesList.forEach(function(entry){
+    // Sanitize the input for extra whitespace
+    entry = entry.trim();
 
     //Checks if entry between commas is empty
     if(entry.replace(/\s/g, '') == ''){
