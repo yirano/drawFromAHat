@@ -24,6 +24,7 @@ Check out the [live page](https://yirano.github.io/drawFromAHat/src/) and see wh
   * [Mohamed Yasser](https://github.com/MohamedYasser97)
   * [Fogha Armand](https://github.com/Fogha)
   * [jbs](https://github.com/lordjbs)
+  * [flarefpv](https://github.com/flarefpv)
 
 ## License
 [MIT License](https://opensource.org/licenses/mit-license.php)
