@@ -8,6 +8,9 @@ var pickBtn = document.getElementById('pick');
 var textBox = document.getElementById('names');
 var pickedDisplay = document.getElementById('pickedDisplay');
 var deleteThis = document.getElementsByClassName('deleteThis');
+
+var nameSet = new Set();
+
 var $ = function (selector) {
   return document.querySelector(selector);
 };
@@ -24,11 +27,21 @@ function addToList() {
 
 
   namesList.forEach(function(entry){
+    // Sanitize the input for extra whitespace
+    entry = entry.trim();
 
     //Checks if entry between commas is empty
     if(entry.replace(/\s/g, '') == ''){
       return;
     }
+
+    // Check if name already inserted
+    if (nameSet.has(entry)) {
+        return;
+    }
+
+    // Insert to set otherwise
+    nameSet.add(entry);
 
     var li = document.createElement('li');
     // li.contentEditable = 'true';
@@ -109,6 +122,9 @@ clearListBtn.addEventListener('click', function (event) {
 
   $('#pickedTitle').style.display = 'block';
   pickedDisplay.innerText = '';
+
+  // Empty name set
+  nameSet.clear();
 
   // -- CONSOLE TESTS --
   console.log('clear list button clicked');
