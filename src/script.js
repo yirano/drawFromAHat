@@ -8,6 +8,7 @@ var pickBtn = document.getElementById('pick');
 var textBox = document.getElementById('names');
 var pickedDisplay = document.getElementById('pickedDisplay');
 var deleteThis = document.getElementsByClassName('deleteThis');
+var resetBtn = document.getElementById('reset');
 
 var nameSet = new Set();
 
@@ -50,7 +51,7 @@ function addToList() {
     if (textBox.value !== '') {
       li.innerHTML = sDel + name;
       ul.appendChild(li);
-
+  
       console.log('names', entry);
       console.log(ul.innerText);
     } else {
@@ -62,6 +63,7 @@ function addToList() {
 
   // -- CONSOLE TESTS --
   console.log('enter pressed');
+  console.log("nameSet", nameSet);
 }
 
 // Press enter in input field
@@ -129,6 +131,26 @@ clearListBtn.addEventListener('click', function (event) {
   // -- CONSOLE TESTS --
   console.log('clear list button clicked');
 });
+
+// ********* RESET WINNERS *********
+resetBtn.addEventListener('click', function (event) {
+  winnersList = [];
+  ul.innerHTML = '';
+  winUl.innerHTML = '';
+  $('#pickedTitle').style.display = 'block';
+  pickedDisplay.innerText = '';
+  for (const element of nameSet) {
+    var li = document.createElement('li');
+    var sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)" title="Delete name">X</button>';
+    let name = `<p class="name">${element}</p>`;
+    li.innerHTML = sDel + name;
+    ul.appendChild(li);
+
+    console.log('names', element);
+    console.log(ul.innerText);
+}
+  
+})
 
 // ************ FUNCTIONS ************
 
