@@ -85,6 +85,10 @@ p {
   color: #FFFFF2;
 }
 
+#pickedDisplay {
+  text-align: center;
+}
+
 input[type='button'] {
   display: inline-block;
   border: solid 1px #ccc;
