@@ -1,43 +1,104 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Draw from a Hat</title>
-    <!-- <meta name="description" content=""> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Draw from a Hat</title>
+  <!-- <meta name="description" content=""> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="../imgs/top-hat-mini.png"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <img class="logo" src="../imgs/top-hat.png" alt="hat" />
+      <a class="navbar-brand" href="#">Draw From A Hat</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://github.com/yirano/drawFromAHat">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
 
     <div id="inputs">
-      <h1 class="display-3">DRAW FROM A HAT</h1>
-      <img id="hat" src="../imgs/top-hat.png" alt="hat" />
-      <input type="text" id="names" placeholder="Enter name"/>
-      <div id="btns">
-        <input type="button" value="Add to List" id="add" class="btn btn-info btn-xtra"/>
-        <input type="button" value="Clear List" id="clear" class="btn btn-danger btn-xtra"/>
-        <input type="button" value="Pick Randomly!" id="pick" class="btn btn-success btn-xtra"/>
+      <div class="row">
+        <div class="order-2 order-lg-1 col-12 col-lg-4">
+          <div id="listDisplay">
+            <div class="title" id="nameTitle">NAMES</div>
+            <hr class="title">
+            <ul id="list"></ul>
+          </div>
+        </div>
+        <div class="order-1 order-lg-2 col-12 col-lg-4">
+          <img class="logoLarge mb-2 ml-5 ml-lg-5" src="../imgs/top-hat.png" alt="hat" />
+          <h1 class="headerText">DRAW FROM A HAT</h1>
+          <hr>
+          <p class="inputInfo">Enter names each at a time or separated by commas</p>
+          <input type="text" id="names" placeholder="Enter name" />
+          <div id="btns">
+            <button class="btn btn-dark btn-xtra mb-2" id="add">Add to List <i class="fas fa-check-circle"></i></button>
+            <button class="btn btn-dark btn-xtra mb-2" id="clear">Clear List <i class="fa fa-trash"></i></button>
+            <button class="btn btn-dark btn-xtra mb-2" id="pick">Pick Randomly! <i class="fas fa-trophy"></i></button>
+            <button class="btn btn-dark btn-xtra mb-2" id="reset">Reset Winners <i class="fas fa-redo"></i></button>
+          </div>
+          <div id="display">
+            <div class="title" id="pickedTitle">
+              <p>Name drawn will show here.</p>
+            </div>
+            <div id="pickedDisplay"></div>
+          </div>
+        </div>
+        <div class="order-3 col-12 col-lg-4">
+          <div id="winners">
+            <div class="title" id="nameTitle">WINNERS</div>
+            <hr>
+            <ul id="winlist"></ul>
+          </div>
+        </div>
       </div>
-      <div id="display">
-        <div class="title" id="pickedTitle">Name drawn will show here<br>Enter names each at a time or separated by commas</div>
-        <div id="pickedDisplay"></div>
-      </div>
     </div>
+  </div>
 
-    <div id="listDisplay">
-      <div class="title" id="nameTitle">NAMES</div>
-      <ul id="list"></ul>
-    </div>
 
-    <div id="winners">
-      <div class="title" id="nameTitle">WINNERS</div>
-      <ul id="winlist"></ul>
-    </div>
 
-    <script src="script.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
-  </body>
+
+
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/579474135d.js" crossorigin="anonymous"></script>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+
+  <!-- Application -->
+  <script src="script.js" async defer></script>
+</body>
+
 </html>

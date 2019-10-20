@@ -1,27 +1,19 @@
 body {
-  /* border: 2px solid red; */
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
   font-family: 'Roboto', sans-serif;
-  background-image:linear-gradient(to right bottom, rgb(9, 155, 67), rgb(14, 82, 150));
+  background-color: #424950;
 }
 
 h1 {
   text-align: center;
   font-size: 52px;
-  width: 100%;
   color: #FFFFF2;
 }
 
 #listDisplay {
   margin-top: 45px;
-  position: absolute;
   left: 80px;
   top: 10%;
-  width: 245px;
+  width: 100%;
 }
 
 ul {
@@ -39,18 +31,29 @@ li {
   border-bottom: none;
 }
 
+p {
+  text-align: center;
+  color: white;
+}
+
 #inputs {
   position: relative;
   margin: auto;
-  width: 38%;
-  padding: 10px;
-  top: 20%;
-  text-align: center;
+  width: 100%;
+  height: 100;
+  object-position: center;
 }
-#hat {
-  width: 235px;
-  height: 240px;
-  margin-bottom: 25px;
+
+.logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.logoLarge {
+  width: 80%;
+  height: auto;
+  align-items: center;
 }
 
 #btns {
@@ -58,6 +61,8 @@ li {
   margin: auto;
   padding: 10px;
   width: 100%;
+  text-align: center;
+  border-radius: 8px;
 }
 
 #display {
@@ -65,20 +70,23 @@ li {
   width: 100%;
   padding: 10px;
   padding-left: 20px;
-  margin-top: 60px;
-  background-color:#7b7b7f;
+  margin-top: 0px;
+  background-color: #7b7b7f;
   border-radius: 15px;
   font-size: 24px;
   color: rgb(21, 116, 71);
 }
 
 #pickedTitle {
-  display: inline-block;
   font-size: 24px;
   letter-spacing: 0.7px;
   color: #ffffff;
   font-weight: lighter;
   color: #FFFFF2;
+}
+
+#pickedDisplay {
+  text-align: center;
 }
 
 input[type='button'] {
@@ -111,8 +119,7 @@ input[type='button']:active {
   height: 30px;
   width: 100%;
   padding-left: 20px;
-  margin: 10px;
-  border: 1px #ccc solid;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 40px;
   font-size: 14px;
   outline: none;
@@ -123,15 +130,12 @@ input[type='button']:active {
   font-size: 22px;
   letter-spacing: 1px;
   margin-bottom: 20px;
-  border-bottom: double 3px black;
   color: #FFFFF2;
 }
 
 .deleteThis {
   display: inline-block;
   cursor: pointer;
-  /* position: absolute;
-    left: 0%; */
   width: 30px;
   height: 100%;
   text-align: center;
@@ -139,8 +143,6 @@ input[type='button']:active {
   background: transparent;
   border: none;
   color: #da0000;
-
-  /* border: solid red 2px; */
 }
 
 .displayNone {
@@ -151,7 +153,7 @@ span {
   display: inline-block;
 }
 
-.name{
+.name {
   display: inline;
   color: #FFFFF2;
 }
@@ -160,19 +162,23 @@ span {
   outline: none;
 }
 
-#winners{
+#winners {
   margin-top: 45px;
-  position: absolute;
-  right: 80px;
+  left: 80px;
   top: 10%;
-  width: 245px;
+  width: 100%;
 }
 
-#rank{
+#rank {
   color: yellow;
   padding-right: 10px;
 }
 
-.display-3{
+.display-3 {
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.headerText {
+  font-family: 'Shrikhand', cursive;
+  font-size: 2.5rem;
 }
