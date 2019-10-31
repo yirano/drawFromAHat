@@ -141,7 +141,7 @@ resetBtn.addEventListener('click', function (event) {
   pickedDisplay.innerText = '';
   for (const element of nameSet) {
     var li = document.createElement('li');
-    var sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)" title="Delete name">X</button>';
+    var sDel = '<button class="deleteThis" onclick="deleteElement(this)" title="Delete name">X</button>';
     let name = `<p class="name">${element}</p>`;
     li.innerHTML = sDel + name;
     ul.appendChild(li);
@@ -155,6 +155,6 @@ resetBtn.addEventListener('click', function (event) {
 // ************ FUNCTIONS ************
 
 // ---- DELETE THIS FUNCTION ----
-function deleteThisFunc(e) {
+function deleteElement(e) {
   e.parentNode.remove();
 }
