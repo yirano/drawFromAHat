@@ -16,6 +16,15 @@ h1 {
   width: 100%;
 }
 
+#navbarNav {
+  max-width: 100px;
+}
+
+#main-container {
+  padding-top: 1.5rem;
+}
+
+
 ul {
   padding: 0;
   position: relative;

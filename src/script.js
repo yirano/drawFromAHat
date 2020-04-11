@@ -1,30 +1,31 @@
 console.log('script.js connected');
 
-var inputs = document.getElementById('inputs');
-var ul = document.getElementById('list');
-var addNameBtn = document.getElementById('add');
-var clearListBtn = document.getElementById('clear');
-var pickBtn = document.getElementById('pick');
-var textBox = document.getElementById('names');
-var pickedDisplay = document.getElementById('pickedDisplay');
-var deleteThis = document.getElementsByClassName('deleteThis');
-var resetBtn = document.getElementById('reset');
+const inputs = document.getElementById('inputs');
+const ul = document.getElementById('list');
+const addNameBtn = document.getElementById('add');
+const clearListBtn = document.getElementById('clear');
+const pickBtn = document.getElementById('pick');
+const textBox = document.getElementById('names');
+const pickedDisplay = document.getElementById('pickedDisplay');
+const deleteThis = document.getElementsByClassName('deleteThis');
+const resetBtn = document.getElementById('reset');
 
-var nameSet = new Set();
+let nameSet = new Set();
 
-var $ = function (selector) {
+const $ = function (selector) {
   return document.querySelector(selector);
 };
 
-var winUl = document.getElementById('winlist');
-var winnersList = [];
+const winUl = document.getElementById('winlist');
+let winnersList = [];
 
 // ********* ADD LI ELEMENT TO UL *********
 function addToList() {
-  var names = document.getElementById('names').value;
+  let names = document.getElementById('names').value;
 
   //Separates all names between commas
-  var namesList = names.split(',');
+  let namesList = names.split(',');
+  console.log(namesList);
 
 
   namesList.forEach(function(entry){
@@ -44,9 +45,9 @@ function addToList() {
     // Insert to set otherwise
     nameSet.add(entry);
 
-    var li = document.createElement('li');
+    const li = document.createElement('li');
     // li.contentEditable = 'true';
-    var sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)" title="Delete name">X</button>';
+    const sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)" title="Delete name">X</button>';
     let name = `<p class="name">${entry}</p>`;
     if (textBox.value !== '') {
       li.innerHTML = sDel + name;
@@ -71,21 +72,18 @@ names.addEventListener('keyup', function (event) {
   if (event.keyCode === 13) addToList();
 });
 // Click on Add to List button
-document.getElementById('add').onclick = function() {
-  addToList();
-}
-// (I couldn't get it to work properly by just setting the onclick to addToList() for some reason, don't know why)
+document.querySelector('#add').addEventListener("click", addToList);
 
 // ************ PICK RANDOM FROM LIST ************
 pickBtn.addEventListener('click', function () {
   // find the length of li elements in ul
-  var liLength = ul.getElementsByTagName('li').length;
+  const liLength = ul.getElementsByTagName('li').length;
   let pickedLi;
-  if (liLength == 0) {
-    pickedDisplay.innerHTML.value = 'Name drawn will show here\nEnter names each at a time or separated by commas';
+  if (liLength === 0) {
+    pickedDisplay.innerHTML.value = 'Name drawn will show here\nEnter names one at a time or separated by commas';
     pickedDisplay.style.color = '#ffffff';
   } else {
-    var randomNum = Math.floor(Math.random() * liLength);
+    let randomNum = Math.floor(Math.random() * liLength);
     pickedLi = ul.getElementsByTagName('li')[randomNum].children[1].textContent;
     // -- DISPLAY PICKED NAME --
     document.getElementById("pickedTitle").style.display = 'none';
@@ -102,7 +100,7 @@ pickBtn.addEventListener('click', function () {
     winnersList.push(pickedLi);
     ul.getElementsByTagName('li')[randomNum].remove();
 
-    var li = document.createElement('li');
+    const li = document.createElement('li');
     let name = `<p class="name"><span id="rank">${winnersList.length})</span>${pickedLi}</p>`;
 
     li.innerHTML = name;
@@ -140,8 +138,8 @@ resetBtn.addEventListener('click', function (event) {
   $('#pickedTitle').style.display = 'block';
   pickedDisplay.innerText = '';
   for (const element of nameSet) {
-    var li = document.createElement('li');
-    var sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)" title="Delete name">X</button>';
+    const li = document.createElement('li');
+    const sDel = '<button class="deleteThis" onclick="deleteThisFunc(this)" title="Delete name">X</button>';
     let name = `<p class="name">${element}</p>`;
     li.innerHTML = sDel + name;
     ul.appendChild(li);
@@ -157,4 +155,9 @@ resetBtn.addEventListener('click', function (event) {
 // ---- DELETE THIS FUNCTION ----
 function deleteThisFunc(e) {
   e.parentNode.remove();
+  const parentLi = e.parentNode;
+  const targetValue = parentLi.querySelector('.name').innerText;
+  console.log(targetValue);
+  nameSet.delete(targetValue);
+  console.log(nameSet);
 }
