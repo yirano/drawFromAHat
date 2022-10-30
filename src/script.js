@@ -9,15 +9,17 @@ const textBox = document.getElementById('names');
 const pickedDisplay = document.getElementById('pickedDisplay');
 const deleteThis = document.getElementsByClassName('deleteThis');
 const resetBtn = document.getElementById('reset');
+const winUl = document.getElementById('winlist');
 
 let nameSet = new Set();
+let winnersList = [];
 
 const $ = function (selector) {
   return document.querySelector(selector);
 };
 
-const winUl = document.getElementById('winlist');
-let winnersList = [];
+
+
 
 // ********* ADD LI ELEMENT TO UL *********
 function addToList() {
@@ -93,9 +95,8 @@ pickBtn.addEventListener('click', function () {
     // -- CONSOLE TESTS --
     console.log('picked name', pickedLi);
     console.log('pick button clicked');
-    confetti.start(1100, 50, 450);
+    // confetti.start(1100, 50, 450);
     // this.disabled = true;
-
     //Move name from normal list to winner's list
     winnersList.push(pickedLi);
     ul.getElementsByTagName('li')[randomNum].remove();
