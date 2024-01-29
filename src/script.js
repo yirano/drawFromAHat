@@ -93,7 +93,18 @@ pickBtn.addEventListener('click', function () {
     // -- CONSOLE TESTS --
     console.log('picked name', pickedLi);
     console.log('pick button clicked');
-    confetti.start(1100, 50, 450);
+     // confetti
+     document.getElementById('my-canvas').style.display = 'block'
+     var confettiSettings = {
+       target: "my-canvas",
+     };
+     var confetti = new ConfettiGenerator(confettiSettings);
+     confetti.render();
+     
+     // close confetti afrer 30seconds
+     setTimeout(function() {
+       document.getElementById('my-canvas').style.display = 'none';
+     }, 3000); 
     // this.disabled = true;
 
     //Move name from normal list to winner's list
