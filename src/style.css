@@ -8,7 +8,15 @@ h1 {
   font-size: 52px;
   color: #FFFFF2;
 }
-
+/* canvas */
+.my-canvas{
+  display: none;
+  position: absolute;
+  height: 80vh;
+  width: 90vw;
+  overflow: hidden;
+  z-index: 4;
+}
 #listDisplay {
   margin-top: 45px;
   left: 80px;

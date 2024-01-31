@@ -29,6 +29,6 @@ Check out the [live page](https://yirano.github.io/drawFromAHat/src/) and see wh
   * [Peter](https://github.com/ppgeyser)
   * [Adryn](https://github.com/adriennelim)
   * [Hannah](https://github.com/hannahlivnat)
-
+  * [Timothy Ndiritu](https://github.com/timothyndiritu)
 ## License
 [MIT License](https://opensource.org/licenses/mit-license.php)
